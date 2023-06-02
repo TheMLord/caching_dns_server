@@ -163,7 +163,6 @@ class CachingDNS:
             for domain_name in self.dns_cache:
                 for q_type in self.dns_cache[domain_name]:
                     if self.dns_cache[domain_name][q_type][1] <= datetime.datetime.now():
-                        print(f"удаление просроченной записи {domain_name} тип {q_type}")
                         records_to_remove.append([domain_name, q_type])
             for remove_records in records_to_remove:
                 domain_name = remove_records[0]
